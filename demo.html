@@ -1,0 +1,104 @@
+<html>
+<body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script src="springy.js"></script>
+<script src="springyui.js"></script>
+<script>
+var graph = new Graph();
+
+var twod = graph.newNode({label: '2D'});
+var threed = graph.newNode({label: '3D'});
+var web = graph.newNode({label: 'web'});
+var browse = graph.newNode({label: 'browse'});
+var filtering = graph.newNode({label: 'filtering'});
+var touch = graph.newNode({label: 'touch'});
+var play = graph.newNode({label: 'play'});
+var memory = graph.newNode({label: 'memory'});
+var emotive = graph.newNode({label: 'emotive'});
+var empathy = graph.newNode({label: 'empathy'});
+var sound = graph.newNode({label: 'sound'});
+var perspective = graph.newNode({label: 'perspective'});
+var identity = graph.newNode({label: 'identity'});
+var rules = graph.newNode({label: 'rules'});
+
+var eye = graph.newNode({label: 'EYEWANTO'});
+var ph = graph.newNode({label: 'PERFECT HUMAN'});
+var fire = graph.newNode({label: 'FIREFLY'});
+var twi = graph.newNode({label: 'TWIDENTIFY'});
+var icor = graph.newNode({label: 'iCORPSE'});
+var toy = graph.newNode({label: 'TOY THEATRE'});
+var win = graph.newNode({label: 'WINDOWS'});
+var look = graph.newNode({label: 'LOOK-WINDOW'});
+
+
+
+graph.newEdge(fire, perspective, {color: '#6A4A3C'});
+graph.newEdge(fire, memory, {color: '#6A4A3C'});
+graph.newEdge(fire, sound, {color: '#6A4A3C'});
+graph.newEdge(fire, play, {color: '#6A4A3C'});
+graph.newEdge(fire, emotive, {color: '#6A4A3C'});
+graph.newEdge(fire, threed, {color: '#6A4A3C'});
+graph.newEdge(fire, rules, {color: '#6A4A3C'});
+
+graph.newEdge(twi, identity, {color: '#00A0B0'});
+graph.newEdge(twi, twod, {color: '#00A0B0'});
+graph.newEdge(twi, filtering, {color: '#00A0B0'});
+graph.newEdge(twi, web, {color: '#00A0B0'});
+
+graph.newEdge(icor, play, {color: '#00A0B0'});
+graph.newEdge(icor, rules, {color: '#00A0B0'});
+graph.newEdge(icor, threed, {color: '#00A0B0'});
+graph.newEdge(icor, filtering, {color: '#00A0B0'});
+
+graph.newEdge(eye, browse, {color: '#EB6841'});
+graph.newEdge(eye, filtering, {color: '#EB6841'});
+graph.newEdge(eye, memory, {color: '#EB6841'});
+graph.newEdge(eye, twod, {color: '#EB6841'});
+graph.newEdge(eye, emotive, {color: '#EB6841'});
+graph.newEdge(eye, touch, {color: '#EB6841'});
+graph.newEdge(eye, rules, {color: '#EB6841'});
+graph.newEdge(eye, web, {color: '#EB6841'});
+
+graph.newEdge(ph, identity, {color: '#7DBE3C'});
+graph.newEdge(ph, filtering, {color: '#7DBE3C'});
+graph.newEdge(ph, perspective, {color: '#7DBE3C'});
+graph.newEdge(ph, sound, {color: '#7DBE3C'});
+graph.newEdge(ph, play, {color: '#7DBE3C'});
+graph.newEdge(ph, emotive, {color: '#7DBE3C'});
+graph.newEdge(ph, threed, {color: '#7DBE3C'});
+graph.newEdge(ph, empathy, {color: '#7DBE3C'});
+graph.newEdge(ph, touch, {color: '#7DBE3C'});
+
+graph.newEdge(toy, sound, {color: '#CC333F'});
+graph.newEdge(toy, touch, {color: '#CC333F'});
+graph.newEdge(toy, rules, {color: '#CC333F'});
+graph.newEdge(toy, perspective, {color: '#CC333F'});
+graph.newEdge(toy, threed, {color: '#CC333F'});
+graph.newEdge(toy, play, {color: '#CC333F'});
+graph.newEdge(toy, emotive, {color: '#CC333F'});
+graph.newEdge(toy, browse, {color: '#CC333F'});
+
+graph.newEdge(look, sound, {color: '#EDC951'});
+graph.newEdge(look, perspective, {color: '#EDC951'});
+graph.newEdge(look, threed, {color: '#EDC951'});
+graph.newEdge(look, emotive, {color: '#EDC951'});
+graph.newEdge(look, memory, {color: '#EDC951'});
+
+graph.newEdge(win, play, {color: '#000000'});
+graph.newEdge(win, rules, {color: '#000000'});
+graph.newEdge(win, twod, {color: '#000000'});
+graph.newEdge(win, touch, {color: '#000000'});
+graph.newEdge(win, web, {color: '#000000'});
+
+
+
+jQuery(function(){
+	var springy = jQuery('#springydemo').springy({
+		graph: graph
+	});
+});
+</script>
+
+<canvas id="springydemo" width="1040" height="680" />
+</body>
+</html>
