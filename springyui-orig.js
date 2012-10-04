@@ -75,8 +75,7 @@ jQuery.fn.springy = function(params) {
 	var nearest = null;
 	var dragged = null;
 
-	jQuery(canvas).bind('touchstart mousedown',function(e) {
-                e.preventDefault();
+	jQuery(canvas).mousedown(function(e) {
 		jQuery('.actions').hide();
 
 		var pos = jQuery(this).offset();
@@ -92,9 +91,7 @@ jQuery.fn.springy = function(params) {
 		renderer.start();
 	});
 
-
-	jQuery(canvas).bind('touchmove mousemove',function(e) {
-                e.preventDefault();
+	jQuery(canvas).mousemove(function(e) {
 		var pos = jQuery(this).offset();
 		var p = fromScreen({x: e.pageX - pos.left, y: e.pageY - pos.top});
 		nearest = layout.nearest(p);
@@ -107,8 +104,7 @@ jQuery.fn.springy = function(params) {
 		renderer.start();
 	});
 
-	jQuery(window).bind('mouseup touchend touchcancel',function(e) {
-                e.preventDefault();
+	jQuery(window).bind('mouseup',function(e) {
 		// Bug! Node's mass isn't reset on mouseup. Nodes which have been
 		// dragged don't repulse very well. Store the initial mass in mousedown
 		// and then restore it here.
